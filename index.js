@@ -1,3 +1,4 @@
+import { platform } from 'os';
 import execa from 'execa';
 import isGit from 'is-git-repository';
 
@@ -9,7 +10,11 @@ const isGitAdded = (altPath = cwd) => {
   }
 
   try {
-    execa.shellSync(`(cd ${altPath} ; git diff --cached --exit-code)`);
+    if (platform() === 'win32') {
+      execa.shellSync(`pushd ${altPath} & git diff --cached --exit-code`);
+    } else {
+      execa.shellSync(`(cd ${altPath} ; git diff --cached --exit-code)`);
+    }
 
     return false;
   } catch (e) {
