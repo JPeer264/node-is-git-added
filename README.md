@@ -1,6 +1,7 @@
 # is-git-added
 
-[![Build Status](https://travis-ci.org/JPeer264/node-is-git-added.svg?branch=master)](https://travis-ci.org/JPeer264/node-is-git-added) [![Coverage Status](https://coveralls.io/repos/github/JPeer264/node-is-git-added/badge.svg?branch=master)](https://coveralls.io/github/JPeer264/node-is-git-added?branch=master)
+[![Build Status](https://travis-ci.org/JPeer264/node-is-git-added.svg?branch=master)](https://travis-ci.org/JPeer264/node-is-git-added)
+[![Coverage Status](https://coveralls.io/repos/github/JPeer264/node-is-git-added/badge.svg?branch=master)](https://coveralls.io/github/JPeer264/node-is-git-added?branch=master)
 
 Checks synchronously if files are added in a git repository
 
