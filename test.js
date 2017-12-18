@@ -23,6 +23,18 @@ test.serial('check if something is added in process.cwd() - manipulated', (t) =>
   t.true(isGitRequiredValue);
 });
 
+test.serial('check if something is just changed in process.cwd() - manipulated', (t) => {
+  fs.writeFileSync(`test_generated_${randomString}.js`, 'console.log();');
+
+  const isGitValue = isGit();
+  const isGitRequiredValue = isGitRequired();
+
+  fs.removeSync(`test_generated_${randomString}.js`);
+
+  t.false(isGitValue);
+  t.false(isGitRequiredValue);
+});
+
 test('check if something is added in process.cwd()', (t) => {
   t.false(isGit());
 });
